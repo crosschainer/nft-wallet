@@ -23,6 +23,7 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         //Load NFT Collections
         $.getJSON( "nft-collection-lists/main.json", function( collections ) {      
             $.each( collections, function( key, val ) {
+                console.log(val);
                 //Load NFTs
                 $.getJSON( "https://blockservice.nebulamden.finance/current/all/"+val.contract+"/collection_balances/", function( data_balances ) {
                     var items = [];
