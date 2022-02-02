@@ -30,17 +30,15 @@ document.addEventListener('lamdenWalletInfo', (response) => {
                     var nft_amount = val[address][nft_name]
                     $.getJSON( "https://masternode-01.lamden.io/contracts/con_nft_collection_4/collection_nfts?key=" + nft_name, function( nft_data ) {
                         items.push( '<div class="col-sm-6 col-lg-4 mb-4"> <div class="card"> <img class="bd-placeholder-img card-img-top" style="width:100%" src="'+nft_data.value["ipfs_image_url"]+'"/> <div class="card-body"> <h5 class="card-title">'+nft_name+'</h5> <p class="card-text">'+nft_data.value["description"]+'</p> <p class="card-text">You own: <b>'+nft_amount+'</b></p> <a href="#" class="btn btn-primary">Transfer</a> </div> </div> </div>' );
-                        console.log(nft_data);
-                        console.log(nft_amount);
                     });
                 });
                 
                 
                 
             });
-            console.log(items);
-            $( "#nft-masonry" ).append( items.toString() );
           });
+          
+            $( "#nft-masonry" ).append( items.toString() );
     } 
 });
 
