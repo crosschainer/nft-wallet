@@ -15,7 +15,7 @@ const detail = JSON.stringify({
 document.addEventListener('lamdenWalletInfo', (response) => {
     if (response.detail.errors === undefined) {
         //Wallet is connected
-        
+        $("#connect_wallet").hide();
     }
 });
 
