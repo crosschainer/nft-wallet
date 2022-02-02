@@ -7,7 +7,7 @@ const detail = JSON.stringify({
     appName: 'NFT Wallet',
     version: '0.0.1',
     logo: 'logo.png',
-    contractName: '',
+    contractName: 'con_example',
     networkType: 'mainnet',
 })
 
