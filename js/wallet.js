@@ -18,7 +18,8 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         $("#connect_wallet").hide();
         $("#not_logged_in").hide();
         $("#logged_in").show();
-    }
+        $("#logged_in_nav").show();
+    } 
 });
 
 // 2. TX Event Listener
