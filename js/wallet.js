@@ -27,8 +27,9 @@ document.addEventListener('lamdenWalletInfo', (response) => {
             $.each( data_balances[con], function( key, val ) {
                 console.log(val);
                 var nfts = Object.keys(val[address]);
-                $.each( nfts, function( nft_name ) {
-                    var nft_amount = val.collection_balances[address][nft_name]
+                $.each( nfts, function( index, nft_name ) {
+                    console.log(index);
+                    var nft_amount = val.collection_balances[address][index]
                     $.getJSON( "https://masternode-01.lamden.io/contracts/con_nft_collection_4/collection_nfts?key=" + nft_name, function( nft_data ) {
                         //items.push( "<li id='" + key + "'>" + val + "</li>" );
                         console.log(nft_data);
