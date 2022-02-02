@@ -16,6 +16,8 @@ document.addEventListener('lamdenWalletInfo', (response) => {
     if (response.detail.errors === undefined) {
         //Wallet is connected
         $("#connect_wallet").hide();
+        $("#not_logged_in").hide();
+        $("#logged_in").show();
     }
 });
 

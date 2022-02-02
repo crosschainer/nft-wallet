@@ -29,7 +29,7 @@
             </a>
     
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                 <li><a href="./" style="display:none" class="nav-link px-2 text-white">Your Inventory</a></li>
+                 <li><a href="./" style="display:none" class="nav-link px-2 text-white active">Your Inventory</a></li>
               
               
             </ul>
@@ -47,8 +47,14 @@
     
     <div class="col-lg-8 mx-auto p-3 py-md-5">
     <main>
-        <h1>Find all NFTs you own in one place</h1>
-        <p class="fs-5 col-md-8">Connect your Wallet to get started.</p>
+        <div id="not_logged_in">
+            <h1>Find all NFTs you own in one place</h1>
+            <p class="fs-5 col-md-8">Connect your Wallet to get started.</p>
+        </div>
+        <div id="logged_in" style="display:none">
+
+        </div>
+
     </main>
     <footer class="pt-5 my-5 text-muted border-top">
         Created by crosschainer
