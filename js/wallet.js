@@ -24,6 +24,7 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         $.getJSON( "https://blockservice.nebulamden.finance/current/all/con_nft_collection_4/collection_balances/", function( data_balances ) {
             var items = [];
             $.each( data_balances, function( key, val ) {
+                console.log(data_balances);
                 var nfts = Object.keys(val.collection_balances[address]);
                 $.each( nfts, function( nft_name ) {
                     var nft_amount = val.collection_balances[address][nft_name]
