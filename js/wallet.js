@@ -19,7 +19,7 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         $("#not_logged_in").hide();
         $("#logged_in").show();
         $("#logged_in_nav").show();
-
+        address = response.detail.wallets[0];
         //Load NFTs
         $.getJSON( "https://blockservice.nebulamden.finance/current/all/con_nft_collection_4/collection_balances/", function( data_balances ) {
             var items = [];
