@@ -27,7 +27,7 @@ document.addEventListener('lamdenWalletInfo', (response) => {
                 $.getJSON( "https://masternode-01.lamden.io/contracts/con_nft_collection_4/collection_nfts?key=" + key, function( data_balances ) {
                     items.push( "<li id='" + key + "'>" + val + "</li>" );
                 });
-                console.log(val);
+                console.log(val[address]);
             });
            
             /*$( "<ul/>", {
