@@ -36,9 +36,9 @@ document.addEventListener('lamdenWalletInfo', (response) => {
                 
                 
             });
-          });
-          
+            console.log(items);
             $( "#nft-masonry" ).append( items.toString() );
+          });
     } 
 });
 
