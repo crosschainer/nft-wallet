@@ -23,16 +23,15 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         //Load NFT Collections
         $.getJSON( "nft-collection-lists/main.json", function( collections ) {      
             $.each( collections, function( key, val ) {
-                console.log(val.contract);
                 //Load NFTs
-                $.getJSON( "https://blockservice.nebulamden.finance/current/all/con_nft_collection_4/collection_balances/", function( data_balances ) {
+                $.getJSON( "https://blockservice.nebulamden.finance/current/all/"+val.contract+"/collection_balances/", function( data_balances ) {
                     var items = [];
                     var con = (Object.keys(data_balances)[0]);
                     $.each( data_balances[con], function( key, val ) {
                         var nfts = Object.keys(val[address]);
                         $.each( nfts, function( index, nft_name ) {
                             var nft_amount = val[address][nft_name]
-                            $.getJSON( "https://masternode-01.lamden.io/contracts/con_nft_collection_4/collection_nfts?key=" + nft_name, function( nft_data ) {
+                            $.getJSON( "https://masternode-01.lamden.io/contracts/"+val.contract+"/collection_nfts?key=" + nft_name, function( nft_data ) {
                                 items.push( '<div class="col-sm-6 col-lg-4 mb-4"> <div class="card"> <img class="bd-placeholder-img card-img-top" style="width:100%" src="'+nft_data.value["ipfs_image_url"]+'"/> <div class="card-body"> <h5 class="card-title">'+nft_name+'</h5> <p class="card-text">'+nft_data.value["description"]+'</p> <p class="card-text">You own: <b>'+nft_amount+'</b></p> <a href="#" class="btn btn-primary">Transfer</a> </div> </div> </div>' );
                                 $( "#nft-masonry" ).append( items.toString() );
                             });
