@@ -19,6 +19,8 @@ document.addEventListener('lamdenWalletInfo', (response) => {
         $("#not_logged_in").hide();
         $("#logged_in").show();
         $("#logged_in_nav").show();
+
+        //Load NFTs
     } 
 });
 
