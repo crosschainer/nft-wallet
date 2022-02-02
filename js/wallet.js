@@ -34,8 +34,6 @@ document.addEventListener('lamdenWalletInfo', (response) => {
                     });
                 });     
             });
-            console.log(items);
-            
         });
     } 
 });
