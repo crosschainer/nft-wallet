@@ -28,8 +28,8 @@
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
             </a>
     
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0" id="logged_in_nav" style="display:none"> 
-                 <li><a href="./"  class="nav-link px-2 text-white active">Your Inventory</a></li>
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"> 
+                 <li><a href="./"  class="nav-link px-2 text-white active" id="logged_in_nav" style="display:none">Your Inventory (<span id="address"></span>)</a></li>
               
               
             </ul>
@@ -56,12 +56,38 @@
             <p class="fs-5 col-md-8">All your NFTs in one place. View & Transfer</p>
             <hr class="my-5">
             <div class="row" id="nft-masonry" data-masonry='{"percentPosition": true }'>
-                
+             
             </div>
         </div>
 
     </main>
   
+    </div>
+
+    <div class="modal fade" id="transferModal" tabindex="-1" aria-labelledby="transferModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="transferModalLabel">Transfer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>NFT: <b id="nft_to_send"></b> | Collection: <b id="contract_collection"></b></p>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="amount_input" placeholder="1">
+              <label for="amount_input">Amount</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="to_input" placeholder="ff61544ea94eaaeb5df08ed863c4a938e9129aba6ceee5f31b6681bdede11b89">
+              <label for="to_input">To Address</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" id="send_nft" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
