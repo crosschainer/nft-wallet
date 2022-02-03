@@ -1,2 +1,2 @@
 # nft-wallet
-![wallet](https://imgur.com/8VB6O8o)
+![wallet](https://i.imgur.com/8VB6O8o.png)
